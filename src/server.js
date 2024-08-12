@@ -1,11 +1,14 @@
 const express = require("express");
 const path = require("path");
+var bodyParser = require("body-parser");
 const enableHotReload = require("./hot-reload");
 
 var exemplocontroller = require("./controllers/exemplo");
 var produtocontroller = require('./controllers/produto')
 
 const app = express();
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 // Configurações do seu app Express
 app.set("view engine", "ejs");
